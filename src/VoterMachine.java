@@ -68,8 +68,17 @@ public class VoterMachine {
     return null;
   }
 
+  public void showCandidates() {
+    System.out.println("============== List of Candidates ==============");
+    for (Candidate c : candidates) {
+      System.out.println("Name: " + c.getName() + " | Number: " + c.getNumber());
+    }
+    System.out.println("================================================");
+  }
+
   public void showResults() {
-    System.out.println("=== Election Results ===");
+    System.out.println("================================================");
+    System.out.println("=============== Election Results ===============");
     for (Candidate c : candidates) {
       System.out.println(c);
     }
@@ -81,7 +90,7 @@ public class VoterMachine {
     return candidates;
   }
 
-  public List<Voter> getVoters(){
+  public List<Voter> getVoters() {
     return voters;
   }
 }

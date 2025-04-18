@@ -15,8 +15,9 @@ public class Result {
     // Gets the winner and show him
     Candidate winner = getWinner();
     if (winner != null) {
+      System.out.println("");
       System.out
-          .println("Winner: " + winner.getName() + " (" + winner.getParty() + ")" + " Votes:" + winner.getVotes());
+          .println("Winner: " + winner.getName() + " (" + winner.getParty() + ")" + " Votes: " + winner.getVotes());
     } else {
       System.out.println("No winner (tie or no votes)");
     }

@@ -15,15 +15,17 @@ public class Election {
 
     while (true) {
       // While tru, only break if option 2
+      System.out.println("");
+      System.out.print("Choose an option:");
       System.out.println("\n1. Vote\n2. End Election");
-      System.out.println("Choose an option:");
       int option = scanner.nextInt();
       scanner.nextLine();
       if (option == 1) {
-        System.out.println("Enter cpf:");
+        voterMachine.showCandidates();
+        System.out.print("Enter cpf:");
         String cpf = scanner.nextLine();
 
-        System.out.println("Enter candidate number (-1 for blank): ");
+        System.out.print("Enter candidate number (-1 for blank): ");
         int number = scanner.nextInt();
         scanner.nextLine();
 
