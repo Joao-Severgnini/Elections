@@ -11,6 +11,7 @@ public class Election {
 
   // Starts the election
   public void start() {
+    System.out.println("================================================");
     System.out.println("Election started!");
 
     while (true) {

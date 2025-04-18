@@ -77,7 +77,6 @@ public class VoterMachine {
   }
 
   public void showResults() {
-    System.out.println("================================================");
     System.out.println("=============== Election Results ===============");
     for (Candidate c : candidates) {
       System.out.println(c);
