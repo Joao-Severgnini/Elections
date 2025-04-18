@@ -6,13 +6,15 @@ public class VoterMachine {
   private int nullVotes = 0;
   private int blankVotes = 0;
 
+  // Constructor
   public VoterMachine(List<Candidate> candidates, List<Voter> voters) {
     this.candidates = candidates;
     this.voters = voters;
   }
 
-  // The vote algorith
+  // The vote algorithm
   public void vote(String cpf, int number) {
+
     Voter voter = findVoterByCpf(cpf);
 
     if (voter == null) {
@@ -64,5 +66,22 @@ public class VoterMachine {
       }
     }
     return null;
+  }
+
+  public void showResults() {
+    System.out.println("=== Election Results ===");
+    for (Candidate c : candidates) {
+      System.out.println(c);
+    }
+    System.out.println("Blank votes: " + blankVotes);
+    System.out.println("Null votes:  " + nullVotes);
+  }
+
+  public List<Candidate> getCandidates() {
+    return candidates;
+  }
+
+  public List<Voter> getVoters(){
+    return voters;
   }
 }

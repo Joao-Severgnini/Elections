@@ -18,10 +18,10 @@ public class Voter {
     this.cpf = CPFValidator.clean(cpf);
   }
 
-  // Methods to get tge cpf and format
+  // Methods to get the cpf and format
   public String getCpf() {
     // To return the formated cpf
-    return formatCpf(cpf);
+    return cpf;
   }
 
   public String formatCpf(String digits) {
