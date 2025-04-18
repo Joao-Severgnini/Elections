@@ -4,14 +4,17 @@ public class Election {
   private VoterMachine voterMachine;
   private Scanner scanner = new Scanner(System.in);
 
+  // The election needs a votermachine, as contructor
   public Election(VoterMachine voterMachine) {
     this.voterMachine = voterMachine;
   }
 
+  // Starts the election
   public void start() {
     System.out.println("Election started!");
 
     while (true) {
+      // While tru, only break if option 2
       System.out.println("\n1. Vote\n2. End Election");
       System.out.println("Choose an option:");
       int option = scanner.nextInt();
@@ -24,8 +27,10 @@ public class Election {
         int number = scanner.nextInt();
         scanner.nextLine();
 
+        // Update a vote on the voterMachine
         voterMachine.vote(cpf, number);
       } else if (option == 2) {
+        // Call the end method
         end();
         break;
       } else {
@@ -37,10 +42,12 @@ public class Election {
 
   public void end() {
     System.out.println("\nElection ended.\n");
+    // Calls the getResult.show method
     getResult().show();
   }
 
   public Result getResult() {
+    // Get result returns a new result
     return new Result(voterMachine);
   }
 }

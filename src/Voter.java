@@ -20,10 +20,10 @@ public class Voter {
 
   // Methods to get the cpf and format
   public String getCpf() {
-    // To return the formated cpf
     return cpf;
   }
 
+  // To return the formated cpf
   public String formatCpf(String digits) {
     return digits.replaceFirst(
         "(\\d{3})(\\d{3})(\\d{3})(\\d{2})",

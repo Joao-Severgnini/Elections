@@ -45,7 +45,7 @@ public class Candidate {
   @Override
   public String toString() {
     return String.format(
-        "Candidate {name='%s', number=%d, party='%s', votes=%d}",
+        "Candidate Name = '%s', Number = %d, Party = '%s', Votes = %d",
         name, number, party, votes);
   }
 }
