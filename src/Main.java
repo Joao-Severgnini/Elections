@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
+    // Create the Lists
     Scanner scanner = new Scanner(System.in);
     List<Candidate> candidates = new ArrayList<>();
     List<Voter> voters = new ArrayList<>();
 
+    // Ask for usage
     System.out.print("How many candidates will we have in the election? ");
     int candidateCount = scanner.nextInt();
     System.out.println("");
@@ -25,12 +27,14 @@ public class Main {
       System.out.print("Candidate Name: ");
       name = scanner.nextLine();
 
+      // Infinite loop to only accept valid numbers
       boolean validNumber = false;
       do {
         System.out.print("Candidate Number: ");
         number = scanner.nextInt();
         scanner.nextLine();
 
+        // Check if alreadyUsed
         boolean alreadyUsed = false;
         for (Candidate c : candidates) {
           if (c.getNumber() == number) {
@@ -39,6 +43,7 @@ public class Main {
           }
         }
 
+        // Shows the error message
         if (alreadyUsed) {
           System.out.println("This number is already in use!");
           System.out.println("Please choose another one.");
@@ -56,6 +61,7 @@ public class Main {
 
     System.out.println("================================================");
     System.out.println("");
+    // Ask for usage
     System.out.print("How many voters will we have in the election? ");
     int voterCount = scanner.nextInt();
     scanner.nextLine();
@@ -72,10 +78,12 @@ public class Main {
       System.out.print("Voter Name: ");
       name = scanner.nextLine();
 
+      // Loop to only accept valid voters
       do {
         System.out.print("Voter CPF: ");
         cpf = scanner.nextLine();
 
+        // Check if the CPF is already used
         boolean cpfAlreadyUsed = false;
         for (Voter existingVoter : voters) {
           if (existingVoter.getCpf().equals(cpf)) {
@@ -85,10 +93,12 @@ public class Main {
             break;
           }
         }
+
         if (!cpfAlreadyUsed) {
           try {
-            voter = new Voter(name, cpf); // Try to create
+            voter = new Voter(name, cpf); // Try to create, this triggers the cpf validation
           } catch (IllegalArgumentException e) {
+            // Show the error to user
             System.out.println("Invalid CPF. Please try again.");
           }
 

@@ -15,12 +15,13 @@ public class Election {
     System.out.println("Election started!");
 
     while (true) {
-      // While tru, only break if option 2
+      // While true, only break if option 2
       System.out.println("");
       System.out.print("Choose an option:");
       System.out.println("\n1. Vote\n2. End Election");
       int option = scanner.nextInt();
       scanner.nextLine();
+
       if (option == 1) {
         voterMachine.showCandidates();
         System.out.print("Enter cpf:");
@@ -38,7 +39,6 @@ public class Election {
         break;
       } else {
         System.out.println("Invalid option.");
-
       }
     }
   }

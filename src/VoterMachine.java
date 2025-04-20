@@ -17,6 +17,7 @@ public class VoterMachine {
 
     Voter voter = findVoterByCpf(cpf);
 
+    // Check for correct usage
     if (voter == null) {
       System.out.println("Voter not found");
       return;
@@ -43,6 +44,8 @@ public class VoterMachine {
       return;
     }
 
+    // If none of the conditions are true
+    // The vote is added and setHasVoted
     candidate.addVote();
     voter.setHasVoted(true);
     System.out.println("Vote registered successfully");
@@ -68,6 +71,7 @@ public class VoterMachine {
     return null;
   }
 
+  // Show only the candidates
   public void showCandidates() {
     System.out.println("============== List of Candidates ==============");
     for (Candidate c : candidates) {
@@ -76,6 +80,7 @@ public class VoterMachine {
     System.out.println("================================================");
   }
 
+  // Show the result without the winner
   public void showResults() {
     System.out.println("=============== Election Results ===============");
     for (Candidate c : candidates) {
@@ -85,6 +90,7 @@ public class VoterMachine {
     System.out.println("Null votes:  " + nullVotes);
   }
 
+  // Some getters
   public List<Candidate> getCandidates() {
     return candidates;
   }
